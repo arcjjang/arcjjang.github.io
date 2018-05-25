@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="나만을 위한, 나의 불쌍한(?) 기억력을 위한 지식 저장소">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="arcjjang">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="logback-config"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="나만을 위한, 나의 불쌍한(?) 기억력을 위한 지식 저장소" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Coder`s Frontline"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>logback-config - Coder`s Frontline</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Coder`s Frontline</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/arcjjang">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('lblogo.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>logback-config</h1>
+                    
+                    <h2 class="post-subheading">
+                        logback + log4jdbc 설정하기
+                    </h2>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-05-25
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/logback/">#logback</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/tip/">tip</a>
+
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="logback-설정하기"><a href="#logback-설정하기" class="headerlink" title="logback 설정하기"></a>logback 설정하기</h1><p>서버 상용화 단계에서 로그를 최적화하기 위해 공부한 내용을 정리한다.<br>한 번 설정하고 신경 끄면 잊어버릴 테니까 여기에 기록한다.</p>
+<p>※ 참고 사이트<br><a href="https://stackoverflow.com/questions/48657071/logback-logger-name-with-wildcard" target="_blank" rel="noopener">https://stackoverflow.com/questions/48657071/logback-logger-name-with-wildcard</a><br><a href="https://logback.qos.ch/manual/" target="_blank" rel="noopener">https://logback.qos.ch/manual/</a></p>
+<p>※ 소스<br><a href="https://github.com/arcjjang/logback-log4jdbc-config" target="_blank" rel="noopener">https://github.com/arcjjang/logback-log4jdbc-config</a></p>
+<h2 id="1-logging-시나리오"><a href="#1-logging-시나리오" class="headerlink" title="1) logging 시나리오"></a>1) logging 시나리오</h2><ol>
+<li>Spring Boot Logback 기본 설정을 최대한 활용하고 싶다.</li>
+<li>Gateway 서버용 log.</li>
+<li>한동안 log를 통해 VOC를 처리해야 한다.</li>
+<li>Root log와 별도로 연동 서비스별로 Logging을 하고 싶다.</li>
+<li>DB 로깅은 log4jdbc를 사용한다.</li>
+</ol>
+<h2 id="2-log4jdbc-설정"><a href="#2-log4jdbc-설정" class="headerlink" title="2) log4jdbc 설정"></a>2) log4jdbc 설정</h2><p>application.properties<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># DataSource</span></span><br><span class="line"><span class="string">spring.datasource.driver-class-name=net.sf.log4jdbc.sql.jdbcapi.DriverSpy</span></span><br><span class="line"><span class="string">spring.datasource.url=jdbc:log4jdbc:mariadb://?.?.?.?:3306/???</span></span><br><span class="line"><span class="string">spring.datasource.username=???</span></span><br><span class="line"><span class="string">spring.datasource.password=???</span></span><br></pre></td></tr></table></figure></p>
+<p>log4jdbc.log4j2.properties<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">log4jdbc.spylogdelegator.name=net.sf.log4jdbc.log.slf4j.Slf4jSpyLogDelegator</span></span><br><span class="line"><span class="comment"># log4jdbc.dump.sql.maxlinelength=0 를 삭제하면 1줄로 길게 나온다...</span></span><br><span class="line"><span class="string">log4jdbc.dump.sql.maxlinelength=0</span></span><br></pre></td></tr></table></figure></p>
+<p>logback.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- ===================================== --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- log4jdbc 추천settings                     --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- ===================================== --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--                       development production --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- jdbc.connection     :     WARN       WARN    --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- jdbc.audit          :     WARN       WARN    --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- jdbc.sqlonly        :     WARN       WARN    --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- jdbc.sqltiming      :     INFO       WARN    --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- jdbc.resultset      :     WARN       WARN    --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- jdbc.resultsettable :     INFO       WARN    --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">"jdbc"</span> <span class="attr">level</span>=<span class="string">"OFF"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">"jdbc.sqlonly"</span> <span class="attr">level</span>=<span class="string">"OFF"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">"jdbc.sqltiming"</span> <span class="attr">level</span>=<span class="string">"INFO"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">"jdbc.audit"</span> <span class="attr">level</span>=<span class="string">"OFF"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">"jdbc.resultset"</span> <span class="attr">level</span>=<span class="string">"OFF"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">"jdbc.resultsettable"</span> <span class="attr">level</span>=<span class="string">"INFO"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">"jdbc.connection"</span> <span class="attr">level</span>=<span class="string">"OFF"</span>/&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="3-Spring-Boot-Logback-기본-설정-활용"><a href="#3-Spring-Boot-Logback-기본-설정-활용" class="headerlink" title="3) Spring Boot Logback 기본 설정 활용"></a>3) Spring Boot Logback 기본 설정 활용</h2><p>logback.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">include</span> <span class="attr">resource</span>=<span class="string">"org/springframework/boot/logging/logback/defaults.xml"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">include</span> <span class="attr">resource</span>=<span class="string">"org/springframework/boot/logging/logback/console-appender.xml"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">"FILE"</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.core.rolling.RollingFileAppender"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">encoder</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">pattern</span>&gt;</span>$&#123;FILE_LOG_PATTERN&#125;<span class="tag">&lt;/<span class="name">pattern</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">encoder</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">file</span>&gt;</span>logs/log.log<span class="tag">&lt;/<span class="name">file</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">rollingPolicy</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">fileNamePattern</span>&gt;</span>logs/log.%d&#123;yyyy-MM-dd&#125;.%i.log<span class="tag">&lt;/<span class="name">fileNamePattern</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">maxFileSize</span>&gt;</span>10MB<span class="tag">&lt;/<span class="name">maxFileSize</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">maxHistory</span>&gt;</span>365<span class="tag">&lt;/<span class="name">maxHistory</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">totalSizeCap</span>&gt;</span>40GB<span class="tag">&lt;/<span class="name">totalSizeCap</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">rollingPolicy</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">root</span> <span class="attr">level</span>=<span class="string">"INFO"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">"CONSOLE"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">"FILE"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">root</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>Console log는 Spring Boot 기본값과 동일하다.</li>
+<li>File log는 /logs 폴더에 10MB씩 날짜별로도 쌓인다.</li>
+<li>ex) /logs/log.2018-05-24.0.log, log.log, log.0.log, log.1.log …</li>
+</ul>
+<h2 id="4-LogBack-Filter-활용하기"><a href="#4-LogBack-Filter-활용하기" class="headerlink" title="4) LogBack Filter 활용하기"></a>4) LogBack Filter 활용하기</h2><h3 id="4-1-나만의-필터-만들기"><a href="#4-1-나만의-필터-만들기" class="headerlink" title="4-1) 나만의 필터 만들기"></a>4-1) 나만의 필터 만들기</h3><p>KakaoFilter.java<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.Filter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> ch.qos.logback.classic.spi.ILoggingEvent;</span><br><span class="line"><span class="keyword">import</span> ch.qos.logback.core.filter.Filter;</span><br><span class="line"><span class="keyword">import</span> ch.qos.logback.core.spi.FilterReply;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">KakaoFilter</span> <span class="keyword">extends</span> <span class="title">Filter</span>&lt;<span class="title">ILoggingEvent</span>&gt; </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> FilterReply <span class="title">decide</span><span class="params">(ILoggingEvent event)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (event.getLoggerName().contains(<span class="string">"Kakao"</span>)) &#123;</span><br><span class="line">            <span class="keyword">return</span> FilterReply.ACCEPT;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> FilterReply.DENY;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>logback.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">"KAKAO-FILE"</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.core.rolling.RollingFileAppender"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter</span> <span class="attr">class</span>=<span class="string">"com.example.Filter.KakaoFilter"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">encoder</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">pattern</span>&gt;</span>$&#123;FILE_LOG_PATTERN&#125;<span class="tag">&lt;/<span class="name">pattern</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">encoder</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">file</span>&gt;</span>logs/kakao/log.log<span class="tag">&lt;/<span class="name">file</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">rollingPolicy</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">fileNamePattern</span>&gt;</span>logs/kakao/log.%d&#123;yyyy-MM-dd&#125;.%i.log<span class="tag">&lt;/<span class="name">fileNamePattern</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">maxFileSize</span>&gt;</span>10MB<span class="tag">&lt;/<span class="name">maxFileSize</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">maxHistory</span>&gt;</span>365<span class="tag">&lt;/<span class="name">maxHistory</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">totalSizeCap</span>&gt;</span>40GB<span class="tag">&lt;/<span class="name">totalSizeCap</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">rollingPolicy</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>별도의 의존성이 필요없다.</li>
+</ul>
+<h3 id="4-2-GEventEvaluator-필터-사용하기"><a href="#4-2-GEventEvaluator-필터-사용하기" class="headerlink" title="4-2) GEventEvaluator 필터 사용하기"></a>4-2) GEventEvaluator 필터 사용하기</h3><p>logback.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--groovy 의존성이 필요하다.--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">"NAVER-FILE"</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.core.rolling.RollingFileAppender"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.core.filter.EvaluatorFilter"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">evaluator</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.classic.boolex.GEventEvaluator"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">expression</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!--e.loggerName =~ "com.example\\..*\\.Naver*"--&gt;</span></span><br><span class="line">                e.loggerName =~ "com.example.*.Naver*"</span><br><span class="line">            <span class="tag">&lt;/<span class="name">expression</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">evaluator</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">OnMismatch</span>&gt;</span>DENY<span class="tag">&lt;/<span class="name">OnMismatch</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">OnMatch</span>&gt;</span>NEUTRAL<span class="tag">&lt;/<span class="name">OnMatch</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">filter</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">encoder</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">pattern</span>&gt;</span>$&#123;FILE_LOG_PATTERN&#125;<span class="tag">&lt;/<span class="name">pattern</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">encoder</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">file</span>&gt;</span>logs/naver/log.log<span class="tag">&lt;/<span class="name">file</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">rollingPolicy</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">fileNamePattern</span>&gt;</span>logs/naver/log.%d&#123;yyyy-MM-dd&#125;.%i.log<span class="tag">&lt;/<span class="name">fileNamePattern</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">maxFileSize</span>&gt;</span>10MB<span class="tag">&lt;/<span class="name">maxFileSize</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">maxHistory</span>&gt;</span>365<span class="tag">&lt;/<span class="name">maxHistory</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">totalSizeCap</span>&gt;</span>40GB<span class="tag">&lt;/<span class="name">totalSizeCap</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">rollingPolicy</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>gradle 의존성 추가<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span>(<span class="string">'org.codehaus.groovy:groovy-all:2.4.15'</span>)</span><br></pre></td></tr></table></figure></p>
+<h3 id="4-3-JaninoEventEvaluator-필터-사용하기"><a href="#4-3-JaninoEventEvaluator-필터-사용하기" class="headerlink" title="4-3) JaninoEventEvaluator 필터 사용하기"></a>4-3) JaninoEventEvaluator 필터 사용하기</h3><p>logback.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--janino 의존성이 필요하다...--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">"GOOGLE-FILE"</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.core.rolling.RollingFileAppender"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.core.filter.EvaluatorFilter"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">evaluator</span>&gt;</span> <span class="comment">&lt;!--필터를 명시 안 하면 기본 필터임--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">expression</span>&gt;</span>return logger.contains("Google");<span class="tag">&lt;/<span class="name">expression</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">evaluator</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">OnMismatch</span>&gt;</span>DENY<span class="tag">&lt;/<span class="name">OnMismatch</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">OnMatch</span>&gt;</span>NEUTRAL<span class="tag">&lt;/<span class="name">OnMatch</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">filter</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">encoder</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">pattern</span>&gt;</span>$&#123;FILE_LOG_PATTERN&#125;<span class="tag">&lt;/<span class="name">pattern</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">encoder</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">file</span>&gt;</span>logs/google/log.log<span class="tag">&lt;/<span class="name">file</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">rollingPolicy</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">fileNamePattern</span>&gt;</span>logs/google/log.%d&#123;yyyy-MM-dd&#125;.%i.log<span class="tag">&lt;/<span class="name">fileNamePattern</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">maxFileSize</span>&gt;</span>10MB<span class="tag">&lt;/<span class="name">maxFileSize</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">maxHistory</span>&gt;</span>365<span class="tag">&lt;/<span class="name">maxHistory</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">totalSizeCap</span>&gt;</span>40GB<span class="tag">&lt;/<span class="name">totalSizeCap</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">rollingPolicy</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>gradle 의존성 추가<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span>(<span class="string">'org.codehaus.janino:janino:3.0.8'</span>)</span><br></pre></td></tr></table></figure></p>
+<h2 id="5-전체-logback-xml-설정"><a href="#5-전체-logback-xml-설정" class="headerlink" title="5) 전체 logback.xml 설정"></a>5) 전체 logback.xml 설정</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">include</span> <span class="attr">resource</span>=<span class="string">"org/springframework/boot/logging/logback/defaults.xml"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">include</span> <span class="attr">resource</span>=<span class="string">"org/springframework/boot/logging/logback/console-appender.xml"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">"FILE"</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.core.rolling.RollingFileAppender"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">encoder</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">pattern</span>&gt;</span>$&#123;FILE_LOG_PATTERN&#125;<span class="tag">&lt;/<span class="name">pattern</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">encoder</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">file</span>&gt;</span>logs/log.log<span class="tag">&lt;/<span class="name">file</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">rollingPolicy</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">fileNamePattern</span>&gt;</span>logs/log.%d&#123;yyyy-MM-dd&#125;.%i.log<span class="tag">&lt;/<span class="name">fileNamePattern</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">maxFileSize</span>&gt;</span>10MB<span class="tag">&lt;/<span class="name">maxFileSize</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">maxHistory</span>&gt;</span>365<span class="tag">&lt;/<span class="name">maxHistory</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">totalSizeCap</span>&gt;</span>40GB<span class="tag">&lt;/<span class="name">totalSizeCap</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">rollingPolicy</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--groovy 의존성이 필요하다.--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">"NAVER-FILE"</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.core.rolling.RollingFileAppender"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">filter</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.core.filter.EvaluatorFilter"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">evaluator</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.classic.boolex.GEventEvaluator"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">expression</span>&gt;</span></span><br><span class="line">                    <span class="comment">&lt;!--e.loggerName =~ "com.example\\..*\\.Naver*"--&gt;</span></span><br><span class="line">                    e.loggerName =~ "com.example.*.Naver*"</span><br><span class="line">                <span class="tag">&lt;/<span class="name">expression</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">evaluator</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">OnMismatch</span>&gt;</span>DENY<span class="tag">&lt;/<span class="name">OnMismatch</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">OnMatch</span>&gt;</span>NEUTRAL<span class="tag">&lt;/<span class="name">OnMatch</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">filter</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">encoder</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">pattern</span>&gt;</span>$&#123;FILE_LOG_PATTERN&#125;<span class="tag">&lt;/<span class="name">pattern</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">encoder</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">file</span>&gt;</span>logs/naver/log.log<span class="tag">&lt;/<span class="name">file</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">rollingPolicy</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">fileNamePattern</span>&gt;</span>logs/naver/log.%d&#123;yyyy-MM-dd&#125;.%i.log<span class="tag">&lt;/<span class="name">fileNamePattern</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">maxFileSize</span>&gt;</span>10MB<span class="tag">&lt;/<span class="name">maxFileSize</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">maxHistory</span>&gt;</span>365<span class="tag">&lt;/<span class="name">maxHistory</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">totalSizeCap</span>&gt;</span>40GB<span class="tag">&lt;/<span class="name">totalSizeCap</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">rollingPolicy</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--janino 의존성이 필요하다...--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">"GOOGLE-FILE"</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.core.rolling.RollingFileAppender"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">filter</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.core.filter.EvaluatorFilter"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">evaluator</span>&gt;</span> <span class="comment">&lt;!--필터를 명시 안 하면 기본 필터임--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">expression</span>&gt;</span>return logger.contains("Google");<span class="tag">&lt;/<span class="name">expression</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">evaluator</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">OnMismatch</span>&gt;</span>DENY<span class="tag">&lt;/<span class="name">OnMismatch</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">OnMatch</span>&gt;</span>NEUTRAL<span class="tag">&lt;/<span class="name">OnMatch</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">filter</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">encoder</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">pattern</span>&gt;</span>$&#123;FILE_LOG_PATTERN&#125;<span class="tag">&lt;/<span class="name">pattern</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">encoder</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">file</span>&gt;</span>logs/google/log.log<span class="tag">&lt;/<span class="name">file</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">rollingPolicy</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">fileNamePattern</span>&gt;</span>logs/google/log.%d&#123;yyyy-MM-dd&#125;.%i.log<span class="tag">&lt;/<span class="name">fileNamePattern</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">maxFileSize</span>&gt;</span>10MB<span class="tag">&lt;/<span class="name">maxFileSize</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">maxHistory</span>&gt;</span>365<span class="tag">&lt;/<span class="name">maxHistory</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">totalSizeCap</span>&gt;</span>40GB<span class="tag">&lt;/<span class="name">totalSizeCap</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">rollingPolicy</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">"KAKAO-FILE"</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.core.rolling.RollingFileAppender"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">filter</span> <span class="attr">class</span>=<span class="string">"com.example.Filter.KakaoFilter"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">encoder</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">pattern</span>&gt;</span>$&#123;FILE_LOG_PATTERN&#125;<span class="tag">&lt;/<span class="name">pattern</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">encoder</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">file</span>&gt;</span>logs/kakao/log.log<span class="tag">&lt;/<span class="name">file</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">rollingPolicy</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">fileNamePattern</span>&gt;</span>logs/kakao/log.%d&#123;yyyy-MM-dd&#125;.%i.log<span class="tag">&lt;/<span class="name">fileNamePattern</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">maxFileSize</span>&gt;</span>10MB<span class="tag">&lt;/<span class="name">maxFileSize</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">maxHistory</span>&gt;</span>365<span class="tag">&lt;/<span class="name">maxHistory</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">totalSizeCap</span>&gt;</span>40GB<span class="tag">&lt;/<span class="name">totalSizeCap</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">rollingPolicy</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- ===================================== --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- log4jdbc 추천 settings                     --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- ===================================== --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--                       development production --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- jdbc.connection     :     WARN       WARN    --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- jdbc.audit          :     WARN       WARN    --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- jdbc.sqlonly        :     WARN       WARN    --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- jdbc.sqltiming      :     INFO       WARN    --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- jdbc.resultset      :     WARN       WARN    --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- jdbc.resultsettable :     INFO       WARN    --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">"jdbc"</span> <span class="attr">level</span>=<span class="string">"OFF"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">"jdbc.sqlonly"</span> <span class="attr">level</span>=<span class="string">"OFF"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">"jdbc.sqltiming"</span> <span class="attr">level</span>=<span class="string">"INFO"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">"jdbc.audit"</span> <span class="attr">level</span>=<span class="string">"OFF"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">"jdbc.resultset"</span> <span class="attr">level</span>=<span class="string">"OFF"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">"jdbc.resultsettable"</span> <span class="attr">level</span>=<span class="string">"INFO"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">"jdbc.connection"</span> <span class="attr">level</span>=<span class="string">"OFF"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">root</span> <span class="attr">level</span>=<span class="string">"INFO"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">"NAVER-FILE"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">"GOOGLE-FILE"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">"KAKAO-FILE"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">"CONSOLE"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">"FILE"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">root</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="6-테스트-결과"><a href="#6-테스트-결과" class="headerlink" title="6) 테스트 결과"></a>6) 테스트 결과</h2><img src="/2018/05/25/logback-config/result.png" title="result">
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/arcjjang" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="mailto:arcelias@naver.com" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2018 arcjjang<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
